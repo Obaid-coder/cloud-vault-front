@@ -1,0 +1,168 @@
+:root {
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+  --bg: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text-main);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+/* Upload Section */
+.upload-section {
+  border: 2px dashed var(--border);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+
+.upload-section:hover {
+  border-color: var(--primary);
+}
+
+input[type="file"] {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+/* Buttons */
+button {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover);
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Status Box */
+.status-box {
+  margin-top: 1.5rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  background: #f1f5f9;
+  border: 1px solid var(--border);
+}
+
+.status-success {
+  background: #f0fdf4;
+  color: #166534;
+  border-color: #bbf7d0;
+}
+
+/* File List */
+.file-list-container {
+  margin-top: 2.5rem;
+  text-align: left;
+}
+
+.file-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.file-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.file-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-name {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.file-hash {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.action-btns {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-small {
+  width: auto;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  background: #f8fafc;
+}
+
+.btn-danger {
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: #fef2f2;
+}
