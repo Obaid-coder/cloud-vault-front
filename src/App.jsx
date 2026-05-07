@@ -71,17 +71,20 @@ function App() {
   };
 
   const handleRemove = async (hash) => {
-    try {
-      const response = await axios.post(`${API_BASE_URL}/remove`, {
-        hash,
-        userId: 'user_123'
-      });
-      setUploadedFiles((prev) => prev.filter(f => f.hash !== hash));
-      setStatus(response.data.message);
-    } catch (error) {
-      setStatus('Error removing file.');
-    }
-  };
+  try {
+    setStatus('Removing...'); // Set a string immediately
+    const response = await axios.post(`${API_BASE_URL}/remove`, {
+      hash,
+      userId: 'user_123'
+    });
+    
+    setUploadedFiles((prev) => prev.filter(f => f.hash !== hash));
+    setStatus(response.data.message || 'File removed successfully'); 
+  } catch (error) {
+    console.error("Remove error:", error);
+    setStatus('Error removing file.'); // Fallback string
+  }
+};
 
   const handleUpload = async () => {
     if (!file) return;
